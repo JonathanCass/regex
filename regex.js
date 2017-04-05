@@ -2,10 +2,8 @@
 // test whether the str provided is a valid email
 function testEmail (email) {
     var regTest = /[\.\w]+@\w+\.\w{2,}/
-
     return regTest.test(email)
 }  
-
 
 console.assert(testEmail("stroman.azariah@yahoo.com"));
 console.assert(testEmail("viola91@gmail.com"));
@@ -25,7 +23,6 @@ console.assert(!testEmail("bonita43@"));
 // test whether the str provided is a valid phone
 function testPhone (phone) {
     var regTest = /\(?(\d{3})\)?[\.\- ]?(\d{3})[\.\- ]?(\d{4})/
-
     return regTest.test(phone)  
 }
 
@@ -143,7 +140,6 @@ function markDownLink (text) {
     else{
         return text
     }
-
 }
 
 console.assert(markDownLink('[Basic link](http://example.com)') === '<a href="http://example.com">Basic link</a>');
@@ -153,7 +149,6 @@ console.assert(markDownLink('l [l](http://TESTdomain.com) l') === 'l <a href="ht
 console.assert(markDownLink('[Invalid](javascript:alert())') === '[Invalid](javascript:alert())');
 console.assert(markDownLink('![Image](http://example.com/cats.jpg)') === '![Image](http://example.com/cats.jpg)');
 console.assert(markDownLink('[Invalid](http://inval.id,com)') === '[Invalid](http://inval.id,com)');
-
 
 // Turn italic MarkDown (*this is italic*) into HTML italic: <em>this is italic</em>. It 
 // should not, however, match bold text - text surrounded by multiple asterisks.
